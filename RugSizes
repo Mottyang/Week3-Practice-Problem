@@ -1,1 +1,23 @@
+public class RugSizes
+ {
+  public static int rugCount(int area) {
+    int count = 0;
+    for(int n = 0; n * n <= area; n++){
+      if(area / n == 0){
+        int m = area / n;
+        if(n == m){count++;}
+        if((!(n % 2 == 0 && m % 2 == 0)) && (n < m)){
+          count++;
+        }
+      }
+    }
+    return count;
+  }
 
+
+   public static void main(String[] args){
+     int area = 4;
+     int count = rugCount(area);
+     System.out.println(count);
+   }
+}
